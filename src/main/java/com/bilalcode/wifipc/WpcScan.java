@@ -1,45 +1,40 @@
 package com.bilalcode.wifipc;
-import com.bilalcode.wifipc.api.Scan;
-import com.bilalcode.wifipc.api.WifiNetwork;
-import com.bilalcode.wifipc.api.handle.ScanHandle;
-import com.bilalcode.wifipc.api.handle.WifiNetworkHandle;
-import com.bilalcode.wifipc.api.handle.WifiNetworkListHandle;
-import com.bilalcode.wifipc.api.list.WifiNetworkList;
+import com.bilalcode.wifipc.api.external.Scan;
+import com.bilalcode.wifipc.error.WpcException;
+import com.bilalcode.wifipc.error.WpcExceptionCode;
 
 public class WpcScan {
-    private final ScanHandle scanHandle;
     private final String[] networkNames;
     private final WpcWifiNetwork[] networks;
 
     public WpcScan() {
-        String[] names;
-        WpcWifiNetwork[] networks;
-        WifiNetworkListHandle wifiNetworkListHandle;
-        int wpcWifiNetworkListSize;
-        this.scanHandle = Scan.newScan();
-
-        // Preparing network list
-        wifiNetworkListHandle = Scan.networkList(this.scanHandle);
-        wpcWifiNetworkListSize = WifiNetworkList.size(wifiNetworkListHandle);
-        networks = new WpcWifiNetwork[wpcWifiNetworkListSize];
-        for (int i = 0; i < wpcWifiNetworkListSize; i++) {
-            WifiNetworkHandle wifiNetworkHandle = WifiNetworkList.at(wifiNetworkListHandle);
-
-            String ssid = WifiNetwork.getName(wifiNetworkHandle);
-            short signalQuality = WifiNetwork.getSignalQuality(wifiNetworkHandle);
-            boolean isSecured = WifiNetwork.isSecured(wifiNetworkHandle);
-
-            networks[i] = new WpcWifiNetwork(ssid, signalQuality, isSecured);
-        }
-
-        // Preparing name list
-        names = new String[networks.length];
-        for (int i = 0; i < networks.length; i++) {
-            names[i] = networks[i].getName();
-        }
-
-        this.networkNames = names;
+        WpcScan scan = Scan.newScan();
+        this.networkNames = scan.networkNames;
+        this.networks = scan.networks;
+    }
+    public WpcScan(WpcWifiNetwork[] networks) {
+        String[] networkNames;
         this.networks = networks;
+
+        networkNames = new String[networks.length];
+        for (int i = 0; i < networks.length; i++) {
+            networkNames[i] = networks[i].getName();
+        }
+
+        this.networkNames = networkNames;
+    }
+
+    public WpcScan(WpcWifiNetwork[] networks, WpcExceptionCode exception) {
+        this(networks);
+
+        if (exception.getCode() == WpcExceptionCode.NOT_PRESENT) return;
+
+        if (exception.getCode() == WpcExceptionCode.WIFI_OFF) {
+            throw new WpcException("System wifi might be turned off");
+        }
+        else {
+            throw new WpcException("General error");
+        }
     }
 
     public final String[] getNetworkNames() {
@@ -48,9 +43,5 @@ public class WpcScan {
 
     public WpcWifiNetwork[] getNetworks() {
         return networks;
-    }
-
-    public void closeHandle() {
-        Scan.destroy(this.scanHandle);
     }
 }

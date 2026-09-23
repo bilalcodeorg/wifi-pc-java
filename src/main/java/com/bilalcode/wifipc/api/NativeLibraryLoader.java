@@ -3,10 +3,7 @@ package com.bilalcode.wifipc.api;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UncheckedIOException;
-import java.net.URISyntaxException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 
 public final class NativeLibraryLoader {
@@ -18,14 +15,13 @@ public final class NativeLibraryLoader {
 
         final String PLATFORM_DIR = detectPlatformDir();
         final String LIB_FILE_NAME = detectLibFileName(libName);
-        final String RESOURCE_PATH = "/native/bin/" + PLATFORM_DIR + "/" + LIB_FILE_NAME;
+        final String RESOURCE_PATH = "/bin/" + PLATFORM_DIR + "/" + LIB_FILE_NAME;
 
         loadFromResources(RESOURCE_PATH);
     }
 
     private static void loadFromResources(String resourcePath) {
         try (InputStream in = NativeLibraryLoader.class.getResourceAsStream(resourcePath)) {
-            System.out.println(resourcePath);
             if (in == null) {
                 throw new RuntimeException("Native library not found in resources: " + resourcePath);
             }
@@ -62,9 +58,9 @@ public final class NativeLibraryLoader {
     private static String normalizeArch(String rawArch) {
         String arch = rawArch.toLowerCase();
         if (arch.equals("x86_64") || arch.equals("amd64")) {
-            return "x86_64";
+            return "x64";
         } else if (arch.equals("aarch64") || arch.equals("arm64")) {
-            return "aarch64";
+            return "arm64";
         }
         throw new UnsatisfiedLinkError("Unsupported architecture: " + rawArch);
     }

@@ -1,0 +1,3 @@
+[submodule "src/main/cpp/external/wifipc"]
+	path = src/main/cpp/external/wifipc
+	url = https://github.com/bilalcodeorg/wifi-pc.git

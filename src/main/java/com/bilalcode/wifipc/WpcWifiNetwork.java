@@ -15,12 +15,11 @@ public final class WpcWifiNetwork {
         return name;
     }
 
-    public short signalQuality() {
+    public short getSignalQuality() {
         return signalQuality;
     }
 
     public boolean isSecured() {
         return isSecured;
     }
-
 }

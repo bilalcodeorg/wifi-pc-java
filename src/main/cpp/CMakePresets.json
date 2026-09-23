@@ -1,15 +1,59 @@
 ﻿{
-    "version": 3,
+    "version": 6,
+
     "configurePresets": [
         {
-            "name": "x64-Release-Mingw",
-            "generator": "MinGW Makefiles",
-            "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "installDir": "${sourceDir}/out/install/${presetName}",
+            "name": "base",
+            "hidden": true,
+            "generator": "Ninja",
             "cacheVariables": {
-                "CMAKE_C_COMPILER": "gcc",
-                "CMAKE_CXX_COMPILER": "g++"
+                "CMAKE_BUILD_TYPE": "Release",
+                "BUILD_SHARED_LIBS": "OFF"
             }
+        },
+        {
+            "name": "windows-x64",
+            "displayName": "Windows x64",
+            "inherits": "base",
+            "binaryDir": "${sourceDir}/build/windows-x64",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "x86_64-w64-mingw32-gcc",
+                "CMAKE_CXX_COMPILER": "x86_64-w64-mingw32-g++"
+            }
+        },
+        {
+            "name": "windows-x86",
+            "displayName": "Windows x86",
+            "inherits": "base",
+            "binaryDir": "${sourceDir}/build/windows-x86",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "i686-w64-mingw32-gcc",
+                "CMAKE_CXX_COMPILER": "i686-w64-mingw32-g++"
+            }
+        },
+        {
+            "name": "windows-arm64",
+            "displayName": "Windows ARM64",
+            "inherits": "base",
+            "binaryDir": "${sourceDir}/build/windows-arm64",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "aarch64-w64-mingw32-gcc",
+                "CMAKE_CXX_COMPILER": "aarch64-w64-mingw32-g++"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "windows-x64",
+            "configurePreset": "windows-x64"
+        },
+        {
+            "name": "windows-x86",
+            "configurePreset": "windows-x86"
+        },
+        {
+            "name": "windows-arm64",
+            "configurePreset": "windows-arm64"
         }
     ]
 }

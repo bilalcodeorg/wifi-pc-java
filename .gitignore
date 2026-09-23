@@ -39,5 +39,5 @@ build/
 .DS_Store
 
 ### Native resources ###
-src/main/resources/native/
-!src/main/resources/native/bin/windows-x86_64/.gitkeep
+src/main/resources/bin/
+!src/main/resources/bin/.gitkeep

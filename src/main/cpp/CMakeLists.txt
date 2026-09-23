@@ -17,20 +17,25 @@ add_subdirectory(external/wifipc)
 # Add library
 add_library(
 	WifiPcJava SHARED
-	src/test.cpp
+    src/com_bilalcode_wifipc_api_external_Scan.cpp
+    src/j_wifi_network_obj.cpp
+    src/j_wpc_scan_obj.cpp
+    src/j_wpc_exception_code_obj.cpp
 )
 add_library(WifiPc::Java ALIAS WifiPcJava)
-target_include_directories(WifiPc
+target_include_directories(WifiPcJava
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
 	PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/external/wifi/include
-	PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/external/java/include
     PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/external/java/win32/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/external/java/include/win32
 )
-target_link_libraries(WifiPcJava PRIVATE WifiPc::CAbi)
+target_link_libraries(WifiPcJava PRIVATE WifiPc)
+set_target_properties(WifiPcJava PROPERTIES
+    OUTPUT_NAME "wifipc_java"
+    PREFIX ""
+)
 
 # Cmake version
 set_target_properties(
