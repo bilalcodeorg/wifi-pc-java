@@ -18,8 +18,6 @@ endif()
 set(CMAKE_C_COMPILER   ${_bin}${TOOLCHAIN_PREFIX}-clang)
 set(CMAKE_CXX_COMPILER ${_bin}${TOOLCHAIN_PREFIX}-clang++)
 set(CMAKE_RC_COMPILER  ${_bin}${TOOLCHAIN_PREFIX}-windres)
-set(CMAKE_AR           ${_bin}llvm-ar)
-set(CMAKE_RANLIB       ${_bin}llvm-ranlib)
 
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
@@ -27,5 +25,6 @@ set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 
 # Optional: fully static runtime (libc++, libunwind)
-# so the .exe has no extra DLLs
+set(CMAKE_SHARED_LINKER_FLAGS_INIT "-static")
+set(CMAKE_MODULE_LINKER_FLAGS_INIT "-static")
 set(CMAKE_EXE_LINKER_FLAGS_INIT "-static")

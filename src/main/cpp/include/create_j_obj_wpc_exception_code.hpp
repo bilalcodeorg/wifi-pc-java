@@ -1,6 +1,6 @@
 #pragma once
 #include <jni.h>
 
-jobject j_wpc_exception_code_obj(
+jobject create_j_obj_wpc_exception_code(
     JNIEnv* env, jlong exception_code
 );

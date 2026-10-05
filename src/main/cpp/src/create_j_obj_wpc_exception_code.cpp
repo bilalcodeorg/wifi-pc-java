@@ -1,7 +1,7 @@
-#include <j_wpc_exception_code_obj.hpp>
+#include <create_j_obj_wpc_exception_code.hpp>
 #include <jni.h>
 
-jobject j_wpc_exception_code_obj(
+jobject create_j_obj_wpc_exception_code(
     JNIEnv* env, jlong exception_code
 ) {
     // Find the class

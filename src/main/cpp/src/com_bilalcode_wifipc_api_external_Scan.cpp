@@ -1,8 +1,8 @@
 #include <com_bilalcode_wifipc_api_external_Scan.h>
-#include <j_wpc_exception_code_obj.hpp>
+#include <create_j_obj_wpc_exception_code.hpp>
 #include <wifi_pc/error_code.hpp>
-#include <j_wifi_network_obj.hpp>
-#include <j_wpc_scan_obj.hpp>
+#include <create_j_obj_wifi_network.hpp>
+#include <create_j_obj_wpc_scan.hpp>
 #include <wifi_pc/error.hpp>
 #include <wifi_pc/scan.hpp>
 #include <memory>
@@ -13,30 +13,30 @@ Java_com_bilalcode_wifipc_api_external_Scan_newScan(
     JNIEnv* env, jclass j_class
 ) {
     long exception_code = 0;
-    jobjectArray jWifiNetworkObjArray;
+    jobjectArray j_wifi_network_obj_arr;
     jobject exception_obj;
     jobject wpcScanObj;
 
     try {
         wpc::Scan scan;
 
-        jclass jWifiNetworkClass = env->FindClass(
+        jclass j_wifi_network_class = env->FindClass(
             "com/bilalcode/wifipc/WpcWifiNetwork"
         );
-        jWifiNetworkObjArray = env->NewObjectArray(
-            scan.networks().size(), jWifiNetworkClass, NULL
+        j_wifi_network_obj_arr = env->NewObjectArray(
+            scan.networks().size(), j_wifi_network_class, NULL
         );
-        if (jWifiNetworkObjArray == NULL) return NULL;
+        if (j_wifi_network_obj_arr == NULL) return NULL;
 
         for (int i = 0; i < scan.networks().size(); i++) {
             const auto& network = scan.networks()[i];
-            jobject jWifiNetworkObj = j_wifi_network_obj(
+            jobject jWifiNetworkObj = create_j_obj_wifi_network(
                 env, network.name(), network.signal_quality(),
                 network.IsSecured()
             );
 
             env->SetObjectArrayElement(
-                jWifiNetworkObjArray, i, jWifiNetworkObj
+                j_wifi_network_obj_arr, i, jWifiNetworkObj
             );
         }
     }
@@ -44,8 +44,11 @@ Java_com_bilalcode_wifipc_api_external_Scan_newScan(
         exception_code = e.code();
     }
 
-    exception_obj = j_wpc_exception_code_obj(env, exception_code);
-    wpcScanObj = j_wpc_scan_obj(env, jWifiNetworkObjArray, exception_obj);
+    exception_obj = create_j_obj_wpc_exception_code(env, exception_code);
+    wpcScanObj = create_j_obj_wpc_scan(
+        env, j_wifi_network_obj_arr,
+        exception_obj
+    );
 
     return wpcScanObj;
 }

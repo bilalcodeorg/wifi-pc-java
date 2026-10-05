@@ -13,9 +13,9 @@ add_subdirectory(external/wifipc)
 add_library(
 	WifiPcJava SHARED
     src/com_bilalcode_wifipc_api_external_Scan.cpp
-    src/j_wifi_network_obj.cpp
-    src/j_wpc_scan_obj.cpp
-    src/j_wpc_exception_code_obj.cpp
+    src/create_j_obj_wpc_exception_code.cpp
+    src/create_j_obj_wifi_network.cpp
+    src/create_j_obj_wpc_scan.cpp
 )
 add_library(WifiPc::Java ALIAS WifiPcJava)
 target_include_directories(WifiPcJava

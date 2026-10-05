@@ -1,7 +1,7 @@
-#include <j_wpc_scan_obj.hpp>
+#include <create_j_obj_wpc_scan.hpp>
 #include <jni.h>
 
-jobject j_wpc_scan_obj(
+jobject create_j_obj_wpc_scan(
     JNIEnv* env, jobjectArray networks, jobject exception
 ) {
     // Find the class

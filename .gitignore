@@ -34,7 +34,6 @@ build/
 
 ### IDEs ###
 .vscode/
-.idea/
 
 ### Mac OS ###
 .DS_Store
@@ -44,5 +43,4 @@ src/main/resources/bin/
 !src/main/resources/bin/.gitkeep
 
 ### Others ###
-.mvn/
 out/

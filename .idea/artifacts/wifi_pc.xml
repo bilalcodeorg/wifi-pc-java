@@ -2,7 +2,7 @@
   <artifact type="jar" name="wifi_pc">
     <output-path>$PROJECT_DIR$/out/artifacts/wifi_pc</output-path>
     <root id="archive" name="wifi_pc.jar">
-      <element id="module-output" name="wifi-pc-java" />
+      <element id="module-output" name="wifipc" />
     </root>
   </artifact>
 </component>
