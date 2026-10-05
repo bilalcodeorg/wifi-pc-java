@@ -32,8 +32,9 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### VS Code ###
+### IDEs ###
 .vscode/
+.idea/
 
 ### Mac OS ###
 .DS_Store
@@ -41,3 +42,7 @@ build/
 ### Native resources ###
 src/main/resources/bin/
 !src/main/resources/bin/.gitkeep
+
+### Others ###
+.mvn/
+out/

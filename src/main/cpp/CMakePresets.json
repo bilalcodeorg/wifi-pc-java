@@ -16,30 +16,22 @@
             "displayName": "Windows x64",
             "inherits": "base",
             "binaryDir": "${sourceDir}/build/windows-x64",
-            "cacheVariables": {
-                "CMAKE_C_COMPILER": "x86_64-w64-mingw32-gcc",
-                "CMAKE_CXX_COMPILER": "x86_64-w64-mingw32-g++"
-            }
+            "toolchainFile": "${sourceDir}/toolchain/toolchain-win-x64.cmake"
         },
         {
             "name": "windows-x86",
             "displayName": "Windows x86",
             "inherits": "base",
             "binaryDir": "${sourceDir}/build/windows-x86",
-            "cacheVariables": {
-                "CMAKE_C_COMPILER": "i686-w64-mingw32-gcc",
-                "CMAKE_CXX_COMPILER": "i686-w64-mingw32-g++"
-            }
+            "toolchainFile": "${sourceDir}/toolchain/toolchain-win-x86.cmake"
+
         },
         {
             "name": "windows-arm64",
             "displayName": "Windows ARM64",
             "inherits": "base",
             "binaryDir": "${sourceDir}/build/windows-arm64",
-            "cacheVariables": {
-                "CMAKE_C_COMPILER": "aarch64-w64-mingw32-gcc",
-                "CMAKE_CXX_COMPILER": "aarch64-w64-mingw32-g++"
-            }
+            "toolchainFile": "${sourceDir}/toolchain/toolchain-win-arm64.cmake"
         }
     ],
     "buildPresets": [
