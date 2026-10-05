@@ -1,5 +1,3 @@
-package com.bilalcode.wifipc.test;
-
 import com.bilalcode.wifipc.WpcScan;
 import com.bilalcode.wifipc.WpcWifiNetwork;
 
