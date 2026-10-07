@@ -1,5 +1,5 @@
 import com.bilalcode.wifipc.WpcScan;
-import com.bilalcode.wifipc.WpcWifiNetwork;
+import com.bilalcode.wifipc.record.WpcWifiNetwork;
 
 public class Test {
     public static void main(String[] args) {

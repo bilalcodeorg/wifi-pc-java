@@ -1,4 +1,4 @@
-package com.bilalcode.wifipc;
+package com.bilalcode.wifipc.record;
 
 public final class WpcWifiNetwork {
     private final String name;
