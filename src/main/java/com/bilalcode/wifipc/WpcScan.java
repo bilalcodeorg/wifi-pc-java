@@ -1,8 +1,8 @@
 package com.bilalcode.wifipc;
-import com.bilalcode.wifipc.api.external.Scan;
+import com.bilalcode.wifipc.api.external.NativeScan;
+import com.bilalcode.wifipc.api.external.record.NativeScanResult;
 import com.bilalcode.wifipc.error.WpcException;
-import com.bilalcode.wifipc.error.WpcExceptionCode;
-import com.bilalcode.wifipc.record.WpcWifiNetwork;
+import com.bilalcode.wifipc.api.external.record.WpcWifiNetwork;
 
 public class WpcScan {
     private final String[] networkNames;
@@ -14,33 +14,15 @@ public class WpcScan {
      * @throws WpcException when and why it is thrown
      */
     public WpcScan() {
-        WpcScan scan = Scan.newScan();
-        this.networkNames = scan.networkNames;
-        this.networks = scan.networks;
-    }
-    private WpcScan(WpcWifiNetwork[] networks) {
         String[] networkNames;
-        this.networks = networks;
+        NativeScanResult scanResult = NativeScan.newScan();
+        this.networks = scanResult.getNetworks();
 
-        networkNames = new String[networks.length];
-        for (int i = 0; i < networks.length; i++) {
-            networkNames[i] = networks[i].getName();
+        networkNames = new String[this.getNetworks().length];
+        for (int i = 0; i < networkNames.length; i++) {
+            networkNames[i] = this.getNetworks()[i].getName();
         }
-
         this.networkNames = networkNames;
-    }
-
-    private WpcScan(WpcWifiNetwork[] networks, WpcExceptionCode exception) {
-        this(networks);
-
-        if (exception.getCode() == WpcExceptionCode.NOT_PRESENT) return;
-
-        if (exception.getCode() == WpcExceptionCode.WIFI_OFF) {
-            throw new WpcException("System wifi might be turned off");
-        }
-        else {
-            throw new WpcException("General error");
-        }
     }
 
     /**

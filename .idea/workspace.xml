@@ -4,17 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ebfc868-8642-4f8d-b262-117383d77637" name="Changes" comment="refactor: update target version">
+    <list default="true" id="3ebfc868-8642-4f8d-b262-117383d77637" name="Changes" comment="docs: for method">
+      <change afterPath="$PROJECT_DIR$/src/main/cpp/external/bstring" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/external/NativeScan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/external/record/NativeScanResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/external/record/WpcWifiNetwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cpp/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/include/com_bilalcode_wifipc_api_external_Scan.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/include/create_j_obj_wifi_network.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/include/create_j_obj_wpc_exception_code.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/include/create_j_obj_wpc_scan.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/src/com_bilalcode_wifipc_api_external_Scan.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/src/create_j_obj_wifi_network.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/src/create_j_obj_wpc_exception_code.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/src/create_j_obj_wpc_scan.cpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/WpcScan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/WpcScan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/WpcWifiNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/record/WpcWifiNetwork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/test/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/external/Scan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/handle/Handle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/handle/ScanHandle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/handle/WifiNetworkHandle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/handle/WifiNetworkListHandle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/error/WpcExceptionCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/external/error/WpcExceptionCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/record/WpcWifiNetwork.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,6 +72,8 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Code/Github/wifi-pc/java&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;D:/Code/Github/wifi-pc/java/src/main/java/com/bilalcode/wifipc/test/Main.java&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
@@ -165,6 +195,10 @@
           <line>13</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NoSuchMethodError" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

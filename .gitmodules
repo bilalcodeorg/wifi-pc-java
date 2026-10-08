@@ -1,3 +1,6 @@
 [submodule "src/main/cpp/external/wifipc"]
 	path = src/main/cpp/external/wifipc
 	url = https://github.com/bilalcodeorg/wifi-pc.git
+[submodule "src/main/cpp/external/bstring"]
+	path = src/main/cpp/external/bstring
+	url = https://github.com/bilalcodeorg/b-string
