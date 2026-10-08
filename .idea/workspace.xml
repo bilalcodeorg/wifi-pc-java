@@ -4,33 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ebfc868-8642-4f8d-b262-117383d77637" name="Changes" comment="docs: for method">
-      <change afterPath="$PROJECT_DIR$/src/main/cpp/external/bstring" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/external/NativeScan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/external/record/NativeScanResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/external/record/WpcWifiNetwork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="3ebfc868-8642-4f8d-b262-117383d77637" name="Changes" comment="refactor: optimize code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/cpp/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cpp/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/cpp/include/com_bilalcode_wifipc_api_external_Scan.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/cpp/include/create_j_obj_wifi_network.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/cpp/include/create_j_obj_wpc_exception_code.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/cpp/include/create_j_obj_wpc_scan.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/cpp/src/com_bilalcode_wifipc_api_external_Scan.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/cpp/src/create_j_obj_wifi_network.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/cpp/src/create_j_obj_wpc_exception_code.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/cpp/src/create_j_obj_wpc_scan.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/WpcScan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/WpcScan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/external/Scan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/handle/Handle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/handle/ScanHandle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/handle/WifiNetworkHandle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/handle/WifiNetworkListHandle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/error/WpcExceptionCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/api/external/error/WpcExceptionCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bilalcode/wifipc/record/WpcWifiNetwork.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,32 +33,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
-    &quot;CidrDebugProfileConversion&quot;: &quot;true&quot;,
-    &quot;Maven.wifi-pc [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.wifi-pc-java [org.apache.maven.plugins:maven-jar-plugin:3.5.0:jar].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.wifi-pc-java [package].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Code/Github/wifi-pc/java&quot;,
-    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;D:/Code/Github/wifi-pc/java/src/main/java/com/bilalcode/wifipc/test/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Test.executor": "Run",
+    "CidrDebugProfileConversion": "true",
+    "Maven.wifi-pc [package].executor": "Run",
+    "Maven.wifi-pc [test].executor": "Run",
+    "Maven.wifi-pc-java [org.apache.maven.plugins:maven-jar-plugin:3.5.0:jar].executor": "Run",
+    "Maven.wifi-pc-java [package].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Code/Github/wifi-pc/java",
+    "node.js.detected.package.jshint": "true",
+    "node.js.selected.package.jshint": "",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "D:/Code/Github/wifi-pc/java/src/main/java/com/bilalcode/wifipc/test/Main.java",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
+    "settings.editor.selected.configurable": "MavenSettings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -92,6 +69,7 @@
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Test" />
       <module name="java" />
+      <option name="VM_PARAMETERS" value="--enable-native-access=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
@@ -185,7 +163,8 @@
     <MESSAGE value="docs: update readme" />
     <MESSAGE value="refactor: ide configs" />
     <MESSAGE value="refactor: update target version" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: update target version" />
+    <MESSAGE value="refactor: optimize code" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: optimize code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
