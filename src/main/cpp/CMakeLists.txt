@@ -31,11 +31,26 @@ set_target_properties(WifiPcJava PROPERTIES
     PREFIX ""
 )
 
-# Cmake version
-set_target_properties(
-    WifiPcJava
-    PROPERTIES
-        CXX_STANDARD 17
-        CXX_STANDARD_REQUIRED ON
-        CXX_EXTENSIONS OFF
-)
+
+# CXX version
+function(target_cxx_strict_version target cxx_std_version)
+    target_compile_features(${target} PUBLIC cxx_std_${cxx_std_version})
+
+    set_target_properties(
+        ${target}
+        PROPERTIES
+            CXX_STANDARD ${cxx_std_version}
+            CXX_STANDARD_REQUIRED ON
+            CXX_EXTENSIONS OFF
+    )
+    if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+        target_compile_options(${target} PRIVATE -Wall -Wextra -pedantic-errors)
+        target_compile_options(${target} PRIVATE -Wall -Wextra -pedantic-errors)
+    elseif(MSVC)
+        target_compile_options(${target} PRIVATE /W4 /permissive-)
+        target_compile_options(${target} PRIVATE /W4 /permissive-)
+    endif()
+endfunction()
+
+# Setting strict CXX version
+target_cxx_strict_version(WifiPcJava 11)
